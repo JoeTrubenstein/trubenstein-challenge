@@ -10,6 +10,17 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 export class ProductsComponent {
   /** Based on the screen size, switch from standard to one column per row */
   public query: any = '';
+  SortDirection = 'asc';
+  SortbyParam = '';
+
+  onSortDirectionHigh() {
+      this.SortDirection = 'desc';
+  }
+  onSortDirectionLow() {
+
+      this.SortDirection = 'asc';
+
+  }
 
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {

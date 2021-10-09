@@ -1,12 +1,13 @@
 <div class="grid-container">
   <h1 class="mat-h1">Product List</h1>
   <div class="form-group">
-    <button mat-raised-button color="primary">Low Price</button>
-    <button mat-raised-button color="accent">High Price</button>
+    <button mat-raised-button type="button" (click) = "onSortDirectionLow()" color="primary">Low Price</button>
+    <button mat-raised-button type="button" (click) = "onSortDirectionHigh()" color="accent">High Price</button>
+    
     <input type="text" class="form-control mb-4" placeholder="Search" [(ngModel)]="query">
   </div>
   <mat-grid-list cols="4" rowHeight="450px">
-    <mat-grid-tile *ngFor="let card of cards | async | sort:'price' | searchFilter:query " [colspan]="card.cols" [rowspan]="card.rows">
+    <mat-grid-tile *ngFor="let card of cards | async | searchFilter:query | sort:['price',SortDirection] " [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
