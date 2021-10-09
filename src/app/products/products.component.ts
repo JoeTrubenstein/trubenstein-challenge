@@ -9,6 +9,8 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 })
 export class ProductsComponent {
   /** Based on the screen size, switch from standard to one column per row */
+  public query: any = '';
+
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {

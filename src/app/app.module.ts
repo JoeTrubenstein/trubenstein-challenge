@@ -27,8 +27,9 @@ import { ShopComponent } from './shop/shop.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 
 
@@ -45,7 +46,8 @@ import { TodoComponent } from './todo/todo.component';
     EmailsComponent,
     UserComponent,
     HomeComponent,
-    TodoComponent
+    TodoComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,8 @@ import { TodoComponent } from './todo/todo.component';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

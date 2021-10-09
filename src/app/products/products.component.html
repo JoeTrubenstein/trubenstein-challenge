@@ -1,7 +1,10 @@
 <div class="grid-container">
   <h1 class="mat-h1">Product List</h1>
+  <div class="form-group">
+    <input type="text" class="form-control mb-4" placeholder="Search" [(ngModel)]="query" id="listSearch">
+  </div>
   <mat-grid-list cols="4" rowHeight="450px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+    <mat-grid-tile *ngFor="let card of cards | async | searchFilter:query " [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
