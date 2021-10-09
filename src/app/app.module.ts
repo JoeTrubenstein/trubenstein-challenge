@@ -30,6 +30,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo.component';
 import { SearchFilterPipe } from './search-filter.pipe';
+import { OrderByPipe } from './order-by.pipe';
 
 
 
@@ -47,7 +48,8 @@ import { SearchFilterPipe } from './search-filter.pipe';
     UserComponent,
     HomeComponent,
     TodoComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    OrderByPipe,
   ],
   imports: [
     BrowserModule,

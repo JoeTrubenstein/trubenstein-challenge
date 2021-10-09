@@ -15,18 +15,18 @@ export class ProductsComponent {
     map(({ matches }) => {
       if (matches) {
         return [
-          { title: 'Mobile 1', cols: 4, rows: 1 },
-          { title: 'Card 2', cols: 4, rows: 1 },
-          { title: 'Card 3', cols: 4, rows: 1 },
-          { title: 'Card 4', cols: 4, rows: 1 }
+          { title: 'Bitcoin', price: 500, cols: 4, rows: 1 },
+          { title: 'Ethereum', price: 700, cols: 4, rows: 1 },
+          { title: 'Cardano', price: 200, cols: 4, rows: 1 },
+          { title: 'Monero', price: 600,  cols: 4, rows: 1 }
         ];
       }
 
       return [
-        { title: 'Desktop 1', cols: 1, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 1 },
-        { title: 'Card 4', cols: 1, rows: 1 }
+        { title: 'Bitcoin', price: 500, cols: 1, rows: 1 },
+        { title: 'Ethereum', price: 700, cols: 1, rows: 1 },
+        { title: 'Cardano', price: 200, cols: 1, rows: 1 },
+        { title: 'Monero', price: 600, cols: 1, rows: 1 }
       ];
     })
   );
