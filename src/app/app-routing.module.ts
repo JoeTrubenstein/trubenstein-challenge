@@ -5,7 +5,7 @@ import { InboxComponent } from './inbox/inbox.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ShopComponent } from './shop/shop.component';
 
-// register routes here
+// register routes here //
 const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'inbox', component: InboxComponent},
