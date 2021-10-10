@@ -1,24 +1,41 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Product List</h1>
-  <div class="form-group">
-    <button mat-raised-button type="button" (click) = "onSortDirectionLow()" color="primary">Low Price</button>
-    <button mat-raised-button type="button" (click) = "onSortDirectionHigh()" color="accent">High Price</button>
-    
-    <input type="text" class="form-control mb-4" placeholder="Search" [(ngModel)]="query">
+  <div class="search-bar">
+    <div class="sort-buttons">
+      <button mat-stroked-button type="button" (click)="onSortDirectionLow()" color="primary">
+        Sort by low price
+      </button>
+      <button mat-stroked-button type="button" (click)="onSortDirectionHigh()" color="primary">
+        Sort by high price
+      </button>
+    </div>
+    <div class="search-checkout">
+      <input type="text" class="search-input" placeholder="Search" [(ngModel)]="query" />
+      <div></div>
+      <button mat-raised-button type="button" (click)="onSortDirectionHigh()" color="accent">
+        Checkout <mat-icon aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
+      </button>
+    </div>
   </div>
   <mat-grid-list cols="4" rowHeight="450px">
-    <mat-grid-tile *ngFor="let card of cards | async | searchFilter:query | sort:['price',SortDirection] " [colspan]="card.cols" [rowspan]="card.rows">
+    <mat-grid-tile *ngFor="
+        let card of cards
+          | async
+          | searchFilter: query
+          | sort: ['price', SortDirection]
+      " [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          ¥{{card.price}}
-        </mat-card-content>
+        <img mat-card-image class="card-image" src="{{ card.image }}" alt="Photo of a Shiba Inu" />
+        <div class="header-block">
+          <h3>{{ card.title }}</h3>
+          <h3 class="price">¥{{ card.price }}</h3>
+        </div>
+        <div class="card-content">
+          Material Icons are available in five styles and a range of downloadable sizes and densities.
+        </div>
+        <div class="card-footer">
+          <div>{{ card.description }}</div>
+          <mat-icon aria-hidden="false" aria-label="Example home icon">add_shopping_cart</mat-icon>
+        </div>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>

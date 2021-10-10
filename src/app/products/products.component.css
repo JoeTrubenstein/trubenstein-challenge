@@ -2,12 +2,34 @@
   margin: 20px;
 }
 
+.sort-buttons {
+  display: flex;
+  justify-content: space-between;
+  width:25%;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-input {
+  width: 40%;
+}
+
+.search-checkout {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+}
+
 .dashboard-card {
   position: absolute;
   top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  height: 400px;
 }
 
 .more-button {
@@ -18,4 +40,57 @@
 
 .dashboard-card-content {
   text-align: center;
+}
+
+.card-content {
+margin-bottom:30px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.card-image {
+  height: 60%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.header-block {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.price {
+  color:deeppink;
+}
+
+@media only screen and (max-width: 800px) {
+  .search-bar {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .search-input {
+    width: 90%;
+    height: 20px;
+    margin-bottom: 5px;
+  }
+
+  .sort-buttons {
+    margin: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .search-checkout {
+    display: block;
+    width: 100%;
+  }
 }

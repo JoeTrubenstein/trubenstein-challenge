@@ -19,8 +19,6 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { ProductsComponent } from './products/products.component';
 import { HomeComponent } from './home/home.component';
-import { EmailsComponent } from './emails/emails.component';
-import { UserComponent } from './user/user.component';
 import { NavComponent } from './nav/nav.component';
 import { ShopComponent } from './shop/shop.component';
 
@@ -31,6 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo.component';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { OrderByPipe } from './order-by.pipe';
+import { UserComponent } from './user/user.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 
 
@@ -44,12 +44,12 @@ import { OrderByPipe } from './order-by.pipe';
     NavComponent,
     ShopComponent,
     ProductsComponent,
-    EmailsComponent,
     UserComponent,
     HomeComponent,
     TodoComponent,
     SearchFilterPipe,
     OrderByPipe,
+    TasksComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +67,7 @@ import { OrderByPipe } from './order-by.pipe';
     MatSortModule,
     MatGridListModule,
     MatCardModule,
+    MatListModule,
     MatMenuModule,
     MatInputModule,
     MatSelectModule,
