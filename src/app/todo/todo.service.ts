@@ -70,8 +70,10 @@ export class TodoService {
 
 	flagSelected() {
 		for (let i = 0; i < TODOS.length; i++) {
-			if (TODOS[i].isDone == true) {
+			if (TODOS[i].isDone == true && TODOS[i].isFlagged == false) {
 				TODOS[i].isFlagged = true;
+			} else if (TODOS[i].isDone == true && TODOS[i].isFlagged == true) {
+				TODOS[i].isFlagged = false;
 			}
 		}
 	}

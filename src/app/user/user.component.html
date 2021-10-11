@@ -1,20 +1,30 @@
   <div class="row">
-    <div class="col-1 menu">
-      <h2>Joe Trubenstein</h2>
-      
+    <div class="col-1">
+      <div class="avatar">
+        <img src="https://source.unsplash.com/BjJP2TN8WoI" />
+
+      </div>
+      <button class="upload-button" mat-raised-button type="button"  color="primary">
+        Upload Image
+       </button>
     </div>
-    <div class="col-2 right">
+    <div class="col-2">
       <div class="aside">
-        <h2>What?</h2>
-        <p>Chania is a city on the island of Crete.</p>
-        <h2>Where?</h2>
-        <p>Crete is a Greek island in the Mediterranean Sea.</p>
-        <h2>How?</h2>
-        <p>You can reach Chania airport from all over Europe.</p>
+
+        <form action="/action_page.php">
+          <label  for="fname">Full Name</label><br>
+          <input class="half-input" type="text" id="fname" name="fname" placeholder="Joseph Trubenstein"><br>
+          <label for="lname">Email Address</label><br>
+          <input class="half-input" type="text" id="lname" name="lname" placeholder="Email address"><br><br>
+          <label for="lname">Description</label><br>
+          <textarea class="full-input" type="text" id="lname" name="lname" placeholder="Description"></textarea><br><br>
+        </form> 
       </div>
     </div>
   </div>
   
   <div class="footer">
-    <p>Resize the browser window to see how the content respond to the resizing.</p>
+    <button mat-raised-button type="button"  color="primary">
+     Save
+    </button>
   </div>

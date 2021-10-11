@@ -14,6 +14,7 @@ export class TodoComponent implements OnInit {
 	public activeTasks: any;
 	public newTodo!: string;
 	public path: string | undefined;
+  public query: any = "";
 
 	constructor(private todoService: TodoService, private route: ActivatedRoute) {}
 

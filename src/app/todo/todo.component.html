@@ -1,42 +1,58 @@
-
 <section class="container">
-    <!-- 
+    <div class="top-bar">
+        <button mat-flat-button class="new-message-button">New Message <mat-icon aria-hidden="false"
+                aria-label="Email icon">mail</mat-icon></button>
+        <input type="text" class="search-input" placeholder="Search" [(ngModel)]="query" />
+        <div class="top-button-group">
+            <button (click)="clearCompleted()" mat-button>
+                Delete
+                <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+            </button>
+            <button (click)="flagSelected()" mat-button>
+                Flag
+                <mat-icon aria-hidden="false" aria-label="Example home icon">outlined_flag</mat-icon>
+            </button>
+            <button mat-button>
+                Archive
+                <mat-icon aria-hidden="false" (click)="clearCompleted()" aria-label="Example home icon">archive
+                </mat-icon>
+            </button>
+        </div>
 
-    <div class="my_class" (click)="clickEvent()"  
-    [ngClass]="status ? 'success' : 'danger'">                
-     Some content
-</div> -->
-
-    <!-- <header class="header">
-      <h1>Todo</h1>
-      <input class="new-todo"
-         placeholder="What needs to be done?"
-         [(ngModel)]="newTodo"
-         (keyup.enter)="addTodo()"
-         autofocus>
-    </header>
-   -->
-    <!-- This section should be hidden by default and shown when there are todos -->
-
-
-    <mat-list class="todo-list">
-        <mat-list-item *ngFor="let todo of todos" [ngClass]="{completed: todo.isDone, editing: todo.editing}">
-            <div class="view">
+    </div>
+    <mat-list class="email-list">
+        <mat-list-item [ngClass]="!todo.isFlagged ? 'nohighlight' : 'highlight'" class="email-list-line"
+            *ngFor="let todo of todos | searchFilter: query"
+            [ngClass]="{completed: todo.isDone, editing: todo.editing}">
+            <div class="line-item">
                 <input class="toggle" type="checkbox" [checked]="todo.isDone" (click)="toggleTodo(todo)">
-                 <mat-icon aria-hidden="false" (click)="flagTodo(todo)" [ngClass]="!todo.isFlagged ? 'success' : 'danger'" aria-label="Example home icon">flag</mat-icon>
-                 <mat-icon aria-hidden="false" (click)="destroyTodo(todo)" aria-label="Example home icon">delete</mat-icon>
-                <label (dblclick)="todo.editing = true">{{todo.title}}</label>
+                <mat-icon class="line-flag" aria-hidden="false" aria-label="Example home icon">outlined_flag</mat-icon>
+                <p class="new-email-alert"><strong>New Email Recieved</strong></p>
+                <div class=message-body>
+                    <label (dblclick)="todo.editing = true">{{todo.title}}</label>
+                </div>
+                <button class="more-button" mat-icon-button [matMenuTriggerFor]="menu"
+                    aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button (click)="destroyTodo(todo)" mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete</span>
+                    </button>
+                    <button (click)="flagTodo(todo)" mat-menu-item>
+                        <mat-icon>outlined_flag</mat-icon>
+                        <span>Flag</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>archive</mat-icon>
+                        <span>Archive</span>
+                    </button>
+                </mat-menu>
 
             </div>
-
+            <mat-divider></mat-divider>
         </mat-list-item>
-
     </mat-list>
 
-
-    <mat-icon aria-hidden="false" (click)="clearCompleted()" aria-label="Example home icon">delete</mat-icon>
-    <button class="clear-completed" (click)="clearCompleted()">Clear completed</button>
-    <h1>55
-
-    </h1>
-    <mat-icon aria-hidden="false" (click)="flagSelected()" aria-label="Example home icon">flag</mat-icon>
+</section>
