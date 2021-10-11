@@ -21,12 +21,11 @@ import { ProductsComponent } from './products/products.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { ShopComponent } from './shop/shop.component';
-
+import { EmailsComponent } from './emails/emails.component'
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TodoComponent } from './todo/todo.component';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { OrderByPipe } from './order-by.pipe';
 import { UserComponent } from './user/user.component';
@@ -46,10 +45,10 @@ import { TasksComponent } from './tasks/tasks.component';
     ProductsComponent,
     UserComponent,
     HomeComponent,
-    TodoComponent,
     SearchFilterPipe,
     OrderByPipe,
     TasksComponent,
+    EmailsComponent
   ],
   imports: [
     BrowserModule,

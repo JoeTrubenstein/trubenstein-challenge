@@ -1,8 +1,12 @@
 <section class="container">
+
+    <!-- Line up the top buttons and search input -->
     <div class="top-bar">
         <button mat-flat-button class="new-message-button">New Message <mat-icon aria-hidden="false"
                 aria-label="Email icon">mail</mat-icon></button>
         <input type="text" class="search-input" placeholder="Search" [(ngModel)]="query" />
+
+        <!-- Separate right-most buttons we can stack them neatly in mobile view -->
         <div class="top-button-group">
             <button (click)="clearCompleted()" mat-button>
                 Delete
@@ -14,12 +18,13 @@
             </button>
             <button mat-button>
                 Archive
-                <mat-icon aria-hidden="false" (click)="clearCompleted()" aria-label="Example home icon">archive
-                </mat-icon>
+                <mat-icon aria-hidden="false" (click)="clearCompleted()" aria-label="Example home icon">archive</mat-icon>
             </button>
         </div>
 
     </div>
+
+    <!-- Begin email list section -->
     <mat-list class="email-list">
         <mat-list-item [ngClass]="!todo.isFlagged ? 'nohighlight' : 'highlight'" class="email-list-line"
             *ngFor="let todo of todos | searchFilter: query"
@@ -49,7 +54,6 @@
                         <span>Archive</span>
                     </button>
                 </mat-menu>
-
             </div>
             <mat-divider></mat-divider>
         </mat-list-item>

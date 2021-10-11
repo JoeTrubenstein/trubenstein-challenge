@@ -42,6 +42,7 @@ padding: 5px;
     background-color:#FCE4EC;
 }
 
+/* If there's time find out if media queries are really best practice in Angular */
 @media only screen and (max-width: 800px) {
     
     .top-bar {

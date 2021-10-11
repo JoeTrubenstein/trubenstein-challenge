@@ -8,7 +8,10 @@ import { Breakpoints, BreakpointObserver } from "@angular/cdk/layout";
 	styleUrls: ["./products.component.css"]
 })
 export class ProductsComponent {
+
 	/** Based on the screen size, switch from standard to one column per row */
+	
+	// Variables for pipe logic
 	public query: any = "";
 	SortDirection = "asc";
 	SortbyParam = "";
@@ -20,6 +23,8 @@ export class ProductsComponent {
 		this.SortDirection = "asc";
 	}
 
+	// If there's time, find out if this is best practice for creating responsive view
+	// Feels strange to hard code duplicate data sets
 	cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
 		map(({ matches }) => {
 			if (matches) {

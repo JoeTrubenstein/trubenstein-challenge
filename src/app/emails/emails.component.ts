@@ -1,22 +1,22 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { TodoService } from "./todo.service";
+import { EmailsService } from "./emails.service";
 
 @Component({
-	selector: "app-todo",
-	templateUrl: "./todo.component.html",
-	styleUrls: ["./todo.component.css"],
-	providers: [TodoService]
+	selector: "app-emails",
+	templateUrl: "./emails.component.html",
+	styleUrls: ["./emails.component.css"],
+	providers: [EmailsService]
 })
-export class TodoComponent implements OnInit {
+export class EmailsComponent implements OnInit {
 	public todos: any;
 	public activeTasks: any;
 	public newTodo!: string;
 	public path: string | undefined;
   public query: any = "";
 
-	constructor(private todoService: TodoService, private route: ActivatedRoute) {}
+	constructor(private emailsService: EmailsService, private route: ActivatedRoute) {}
 
 	status: boolean = false;
 	clickEvent() {
@@ -32,7 +32,7 @@ export class TodoComponent implements OnInit {
 	}
 
 	addTodo() {
-		this.todoService
+		this.emailsService
 			.add({ title: this.newTodo, isDone: false })
 			.then(() => {
 				return this.getTodos();
@@ -43,7 +43,7 @@ export class TodoComponent implements OnInit {
 	}
 
 	getTodos(query = "") {
-		return this.todoService.get(query).then(todos => {
+		return this.emailsService.get(query).then(todos => {
 			this.todos = todos;
 			this.activeTasks = this.todos.filter((todo: { isDone: any }) => !todo.isDone).length;
 		});
@@ -51,45 +51,37 @@ export class TodoComponent implements OnInit {
 
 	updateTodo(todo: { title: any; editing: boolean }, newValue: any) {
 		todo.title = newValue;
-		return this.todoService.put(todo).then(() => {
+		return this.emailsService.put(todo).then(() => {
 			todo.editing = false;
 			return this.getTodos();
 		});
 	}
 
 	destroyTodo(todo: any) {
-		this.todoService.delete(todo).then(() => {
+		this.emailsService.delete(todo).then(() => {
 			return this.getTodos();
 		});
 	}
 
 	clearCompleted() {
-		this.todoService.deleteCompleted().then(() => {
+		this.emailsService.deleteCompleted().then(() => {
 			return this.getTodos();
 		});
 	}
 
-  // flagSelected() {
-	// 	this.todoService.flagSelected().then(() => {
-	// 		return this.getTodos();
-	// 	});
-	// }
-
    flagSelected() {
-		this.todoService.flagSelected()
+		this.emailsService.flagSelected()
 			return this.getTodos();
 	}
 
-
-
   flagTodo(todo: any) {
-		this.todoService.flag(todo).then(() => {
+		this.emailsService.flag(todo).then(() => {
 			return this.getTodos();
 		});
 	}
 
 	toggleTodo(todo: any) {
-		this.todoService.toggle(todo).then(() => {
+		this.emailsService.toggle(todo).then(() => {
 			return this.getTodos();
 		});
 	}

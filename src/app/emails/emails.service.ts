@@ -10,7 +10,7 @@ let TODOS = [
 @Injectable({
 	providedIn: "root"
 })
-export class TodoService {
+export class EmailsService {
 	constructor() {}
 
 	get(query = "") {

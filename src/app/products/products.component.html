@@ -1,4 +1,6 @@
 <div class="grid-container">
+
+  <!-- Line up the buttons and input above the cards -->
   <div class="search-bar">
     <div class="sort-buttons">
       <button mat-stroked-button type="button" (click)="onSortDirectionLow()" color="primary">
@@ -16,7 +18,11 @@
       </button>
     </div>
   </div>
+
+  <!-- Begin Card Section -->
   <mat-grid-list cols="4" rowHeight="450px">
+
+    <!-- Apply pipe logic to the for loop when retrieving product data  -->
     <mat-grid-tile *ngFor="
         let card of cards
           | async
@@ -24,7 +30,10 @@
           | sort: ['price', SortDirection]
       " [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
-        <img mat-card-image class="card-image" src="{{ card.image }}" alt="Photo of a Shiba Inu" />
+
+        <!-- alt text should be loaded dynamically in production with real data -->
+        <img mat-card-image class="card-image" src="{{ card.image }}" alt="Photo of a Canon Camera" />
+
         <div class="header-block">
           <h3>{{ card.title }}</h3>
           <h3 class="price">¥{{ card.price }}</h3>
@@ -39,4 +48,6 @@
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
+  <!-- End Card Section -->
+
 </div>
