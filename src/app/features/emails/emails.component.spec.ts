@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { SearchFilterPipe } from 'src/app/pipes/search-filter.pipe';
 
 import { EmailsComponent } from './emails.component';
+
 
 describe('EmailsComponent', () => {
   let component: EmailsComponent;
@@ -8,7 +11,8 @@ describe('EmailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmailsComponent ]
+      declarations: [ EmailsComponent, SearchFilterPipe],
+      imports:[RouterTestingModule]
     })
     .compileComponents();
   });

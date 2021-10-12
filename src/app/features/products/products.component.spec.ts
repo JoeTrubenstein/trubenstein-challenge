@@ -8,6 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { ProductsComponent } from './products.component';
+import { OrderByPipe } from 'src/app/pipes/order-by.pipe';
+import { SearchFilterPipe } from 'src/app/pipes/search-filter.pipe';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
@@ -15,7 +17,7 @@ describe('ProductsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ProductsComponent],
+      declarations: [ProductsComponent,OrderByPipe, SearchFilterPipe],
       imports: [
         NoopAnimationsModule,
         LayoutModule,
