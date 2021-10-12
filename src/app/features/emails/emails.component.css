@@ -1,17 +1,19 @@
 .container {
 width: 100%;
 margin-top: 10px;
-padding: 5px;
+margin-left: 10px;
 }
 
 .top-bar {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 
 .email-list {
     background-color: white;
+    margin-right: 20px;
 }
 
 .new-message-button {
@@ -55,7 +57,7 @@ padding: 5px;
         margin-top: 5px;
         margin-bottom: 5px;
         height: 35px;
-        width: 100%;
+        width: 90%;
       }
 
     .new-email-alert {

@@ -4,21 +4,21 @@
     <div class="top-bar">
         <button mat-flat-button class="new-message-button">New Message <mat-icon aria-hidden="false"
                 aria-label="Email icon">mail</mat-icon></button>
-        <input type="text" class="search-input" placeholder="Search" [(ngModel)]="query" />
+        <input matInput type="text" class="search-input" placeholder="Search" [(ngModel)]="query" />
 
         <!-- Separate right-most buttons we can stack them neatly in mobile view -->
         <div class="top-button-group">
             <button (click)="clearCompleted()" mat-button>
                 Delete
-                <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+                <mat-icon aria-hidden="false" aria-label="Delete Icon">delete</mat-icon>
             </button>
             <button (click)="flagSelected()" mat-button>
                 Flag
-                <mat-icon aria-hidden="false" aria-label="Example home icon">outlined_flag</mat-icon>
+                <mat-icon aria-hidden="false" aria-label="Flag Icon">outlined_flag</mat-icon>
             </button>
             <button mat-button>
                 Archive
-                <mat-icon aria-hidden="false" (click)="clearCompleted()" aria-label="Example home icon">archive</mat-icon>
+                <mat-icon aria-hidden="false" (click)="clearCompleted()" aria-label="Archive Icon">archive</mat-icon>
             </button>
         </div>
 
@@ -26,26 +26,32 @@
 
     <!-- Begin email list section -->
     <mat-list class="email-list">
-        <mat-list-item [ngClass]="!todo.isFlagged ? 'nohighlight' : 'highlight'" class="email-list-line"
-            *ngFor="let todo of todos | searchFilter: query"
-            [ngClass]="{completed: todo.isDone, editing: todo.editing}">
-            <div class="line-item">
-                <input class="toggle" type="checkbox" [checked]="todo.isDone" (click)="toggleTodo(todo)">
-                <mat-icon class="line-flag" aria-hidden="false" aria-label="Example home icon">outlined_flag</mat-icon>
+
+        <!-- print list of emails with filter pipe logic and   -->
+        <mat-list-item class="email-list-line" *ngFor="let email of emails | searchFilter: query"
+            [ngClass]="{completed: email.isRead }">
+
+            <!-- check if item is flagged and switch to highlight class -->
+            <div [ngClass]="!email.isFlagged ? 'nohighlight' : 'highlight'" class="line-item">
+
+                <input class="toggle" type="checkbox" [checked]="email.isRead" (click)="toggleEmail(email)">
+                <mat-icon class="line-flag" aria-hidden="false" aria-label="Outlined Flag Icon">outlined_flag</mat-icon>
                 <p class="new-email-alert"><strong>New Email Recieved</strong></p>
                 <div class=message-body>
-                    <label (dblclick)="todo.editing = true">{{todo.title}}</label>
+                    <label (dblclick)="email.editing = true">{{email.title}}</label>
                 </div>
                 <button class="more-button" mat-icon-button [matMenuTriggerFor]="menu"
                     aria-label="Example icon-button with a menu">
                     <mat-icon>more_vert</mat-icon>
                 </button>
+
+                <!-- Start popup menu -->
                 <mat-menu #menu="matMenu">
-                    <button (click)="destroyTodo(todo)" mat-menu-item>
+                    <button (click)="destroyEmail(email)" mat-menu-item>
                         <mat-icon>delete</mat-icon>
                         <span>Delete</span>
                     </button>
-                    <button (click)="flagTodo(todo)" mat-menu-item>
+                    <button (click)="flagEmail(email)" mat-menu-item>
                         <mat-icon>outlined_flag</mat-icon>
                         <span>Flag</span>
                     </button>
@@ -54,6 +60,7 @@
                         <span>Archive</span>
                     </button>
                 </mat-menu>
+
             </div>
             <mat-divider></mat-divider>
         </mat-list-item>

@@ -17,19 +17,19 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { ProductsComponent } from './products/products.component';
-import { HomeComponent } from './home/home.component';
-import { NavComponent } from './nav/nav.component';
-import { ShopComponent } from './shop/shop.component';
-import { EmailsComponent } from './emails/emails.component'
+import { ProductsComponent } from './features/products/products.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NavComponent } from './features/nav/nav.component';
+import { ShopComponent } from './pages/shop/shop.component';
+import { EmailsComponent } from './features/emails/emails.component'
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SearchFilterPipe } from './search-filter.pipe';
-import { OrderByPipe } from './order-by.pipe';
-import { UserComponent } from './user/user.component';
-import { TasksComponent } from './tasks/tasks.component';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { OrderByPipe } from './pipes/order-by.pipe';
+import { UserComponent } from './features/user/user.component';
+import { TasksComponent } from './features/tasks/tasks.component';
 
 
 

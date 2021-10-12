@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-1">
+      <mat-card class="profile-card">
+        <mat-card-header>
+          <div mat-card-avatar class="profile-header-image"></div>
+          <mat-card-title>Joe Trubenstein</mat-card-title>
+          <mat-card-subtitle>Aspiring Angular Developer</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://res.cloudinary.com/indridcold/image/upload/v1633998197/khkqzrik4yv7tsicmxsy.svg" alt="Avatar">
+        <mat-divider inset></mat-divider>
+        <mat-card-actions class=profile-footer>
+          <button mat-raised-button type="button" color="primary">
+            Upload Image
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="col-2">
+      <div class="aside">
+        <form class="material-form">
+          <mat-form-field class="input-half-width" appearance="fill">
+            <mat-label>Full Name</mat-label>
+            <input matInput type="text" id="name" name="name" placeholder="Full Name" value="">
+          </mat-form-field>
+          <br />
+          <mat-form-field class="input-half-width" appearance="fill">
+            <mat-label>Email Address</mat-label>
+            <input matInput type="email" id="email" placeholder="email@email.com" value="">
+          </mat-form-field>
+          <br />
+          <mat-form-field class="input-full-width" appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput class="material-text-area" type="text" id="description" placeholder="Description"></textarea>
+          </mat-form-field>
+          <button class="form-button" mat-raised-button type="button" color="primary">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+</div>
