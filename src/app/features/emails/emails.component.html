@@ -28,7 +28,7 @@
     <mat-list class="email-list">
 
         <!-- print list of emails with filter pipe logic and   -->
-        <mat-list-item class="email-list-line" *ngFor="let email of emails | searchFilter: query"
+        <mat-list-item  *ngFor="let email of emails | searchFilter: query"
             [ngClass]="{completed: email.isRead }">
 
             <!-- check if item is flagged and switch to highlight class -->
