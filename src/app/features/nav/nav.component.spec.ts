@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { NavComponent } from './nav.component';
+import { MatGridTile } from '@angular/material/grid-list';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -15,7 +16,7 @@ describe('NavComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [NavComponent],
+      declarations: [NavComponent, MatGridTile],
       imports: [
         NoopAnimationsModule,
         LayoutModule,
@@ -24,6 +25,7 @@ describe('NavComponent', () => {
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
+        MatSidenavModule
       ]
     }).compileComponents();
   }));

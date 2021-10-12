@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatIcon } from '@angular/material/icon';
+import { MatList } from '@angular/material/list';
+import { MatToolbar } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SearchFilterPipe } from 'src/app/pipes/search-filter.pipe';
 
@@ -11,7 +14,7 @@ describe('EmailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmailsComponent, SearchFilterPipe],
+      declarations: [ EmailsComponent, SearchFilterPipe, MatList, MatIcon, MatToolbar],
       imports:[RouterTestingModule]
     })
     .compileComponents();

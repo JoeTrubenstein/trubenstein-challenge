@@ -10,6 +10,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ProductsComponent } from './products.component';
 import { OrderByPipe } from 'src/app/pipes/order-by.pipe';
 import { SearchFilterPipe } from 'src/app/pipes/search-filter.pipe';
+import { MatListItem } from '@angular/material/list';
+import { MatFormField } from '@angular/material/form-field';
+import { MatToolbar } from '@angular/material/toolbar';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
@@ -17,7 +20,7 @@ describe('ProductsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ProductsComponent,OrderByPipe, SearchFilterPipe],
+      declarations: [ProductsComponent,OrderByPipe, SearchFilterPipe, MatListItem, MatFormField, MatToolbar],
       imports: [
         NoopAnimationsModule,
         LayoutModule,

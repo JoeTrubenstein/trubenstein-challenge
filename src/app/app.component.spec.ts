@@ -1,6 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import { MatFormField } from '@angular/material/form-field';
+import { MatGridTile } from '@angular/material/grid-list';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { EmailsComponent } from './features/emails/emails.component';
+import { NavComponent } from './features/nav/nav.component';
+import { UserComponent } from './features/user/user.component';
+import { OrderByPipe } from './pipes/order-by.pipe';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -9,7 +16,14 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        EmailsComponent,
+        UserComponent,
+        AppComponent,
+        NavComponent,
+        OrderByPipe,
+        SearchFilterPipe,
+        MatGridTile,
+        MatFormField
       ],
     }).compileComponents();
   });

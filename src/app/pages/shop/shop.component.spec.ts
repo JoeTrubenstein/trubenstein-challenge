@@ -1,4 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatCard } from '@angular/material/card';
+import { MatIcon } from '@angular/material/icon';
+import { MatToolbar } from '@angular/material/toolbar';
+import { ProductsComponent } from 'src/app/features/products/products.component';
+import { OrderByPipe } from 'src/app/pipes/order-by.pipe';
+import { SearchFilterPipe } from 'src/app/pipes/search-filter.pipe';
 
 import { ShopComponent } from './shop.component';
 
@@ -8,7 +14,7 @@ describe('ShopComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShopComponent ]
+      declarations: [ ShopComponent, ProductsComponent,OrderByPipe,SearchFilterPipe, MatIcon, MatCard, MatToolbar ]
     })
     .compileComponents();
   });
